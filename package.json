@@ -1,0 +1,15 @@
+{
+  "name": "ningy",
+  "version": "0.0.0",
+  "description": "A simple HTTP(s) web server in Node that lets you use Passport auth for your public files",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.irslabs.org:pvencill/nginy.git"
+  },
+  "author": "Paul Vencill",
+  "license": "MIT"
+}
