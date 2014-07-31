@@ -11,5 +11,12 @@
     "url": "git@git.irslabs.org:pvencill/nginy.git"
   },
   "author": "Paul Vencill",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "cluster_master": "^0.1.1",
+    "convict": "^0.4.2",
+    "express": "^4.7.2",
+    "passport": "^0.2.0",
+    "passport-ldap": "0.0.1"
+  }
 }
