@@ -1,9 +1,8 @@
 'use strict';
-var schema = require('./schema');
+var schema = require('./schema'),
+      _ = require('lodash');
 
-module.exports = {
-    env : schema.get('env'),
-    pid : schema.get('pid'),
-    port : schema.get('port'),
-    directory: schema.get('directory')
-  };
+module.exports = _.transform(schema._def,
+  function(result,  num, key){
+    result[key] = schema.get(key);
+  });

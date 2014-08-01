@@ -4,6 +4,8 @@
   "description": "A simple HTTP(s) web server in Node that lets you use Passport auth for your public files",
   "main": "index.js",
   "scripts": {
+    "start": "./bin/run",
+    "debug": "node ./server.js --debug",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,6 +19,11 @@
     "convict": "^0.4.2",
     "express": "^4.7.2",
     "passport": "^0.2.0",
-    "passport-ldap": "0.0.1"
+    "cluster-master": "~0.2.0",
+    "passport-ldapauth": "~0.2.0",
+    "cookie-parser": "~1.3.2",
+    "client-sessions": "~0.6.0",
+    "morgan": "~1.2.2",
+    "lodash": "~2.4.1"
   }
 }
