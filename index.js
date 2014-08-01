@@ -4,6 +4,7 @@ var express   = require('express'),
       cookieParser = require('cookie-parser'),
       logger = require('morgan'),
       session = require('client-sessions'),
+      bodyParser = require('body-parser'),
       requiresLogin = require('./lib/requiresLogin'),
       passport = require('./config/passport');
 
@@ -12,6 +13,7 @@ var app = express();
 if(config.env === 'development')
   app.use(logger('dev'));
 
+app.use(bodyParser.urlencoded({extended:true}));
 app.use(cookieParser(config.secret));
 
 app.use(session({
