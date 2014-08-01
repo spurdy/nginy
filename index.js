@@ -27,7 +27,9 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.post('/signin', function(req,res,next){
+  console.log('posting to signin');
   passport.authenticate('ldapauth', function(err,user,info){
+    console.log('callback from ldapauth');
     if(err){
       console.log(err);
       return next(err);
@@ -38,7 +40,7 @@ app.post('/signin', function(req,res,next){
     }
     console.log(user);
     return res.redirect('/');
-  });
+  })(req,res,next);
 });
 
 // app.post('/signin', passport.authenticate('ldapauth', {
