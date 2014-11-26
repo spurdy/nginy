@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html class="no-js" lang="en" >
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login to IRSLabs</title>
+
+  <!-- If you are using the CSS version, only link these 2 files, you may add app.css to use for your overrides if you like -->
+  <link rel="stylesheet" href="/vendor/foundation/css/normalize.css">
+  <link rel="stylesheet" href="/vendor/foundation/css/foundation.css">
+
+  <script src="/vendor/foundation/js/vendor/modernizr.js"></script>
+
+</head>
+<body>
+<div class="content">
+    <div class="container row">
+        <h1>Login to IRS Labs</h1>
+          <p>Looks like you've been invited to view one of our prototypes, but haven't logged in yet. If you don't have credentials, be sure to contact whoever gave you the URL to get them.</p>
+
+          <form method='POST' action='/signin'>
+            <fieldset>
+                <legend>Login</legend>
+                <label>User Name
+                    <input type='text' name='username' placeholder='Your username' required>
+                </label>
+                <label>Password
+                    <input type='password' name='password' placeholder='Your Password' required>
+                </label>
+                <ul class="button-group">
+                    <li>
+                        <button type='submit' class="button">Sign In</button>
+                    </li>
+                </ul>
+            </fieldset>
+          </form>
+      </div>
+</div>
+
+<div class="scripts">
+  <script src="/vendor/foundation/js/vendor/jquery.js"></script>
+  <script src="/vendor/foundation/js/foundation.min.js"></script>
+  <script>
+    $(document).foundation();
+  </script>
+</div>
+
+</body>
+</html>
