@@ -2,6 +2,27 @@
 
 var convict = require('convict'),
     path    = require('path');
+var crypto = require('crypto');
+
+var chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+var length = 20;
+
+function generateRandomString() {
+  var charsLength = chars.length;
+
+  var randomBytes = crypto.randomBytes(length);
+  var result = new Array(length);
+
+  var cursor = 0;
+  for (var i = 0; i < length; ++i) {
+    cursor += randomBytes[i];
+    result[i] = chars[cursor % charsLength];
+  }
+
+  var randomString = result.join('');
+
+  return randomString;
+}
 
 // define a schema
 var conf = convict({
@@ -36,7 +57,7 @@ var conf = convict({
   secret: {
     doc: 'Random string to use for cookie encryption',
     format: String,
-    default: '7nC4egZ5eXvG5MNA1xUX3PQSwJCgmZVW',
+    default: generateRandomString(),
     env:'COOKIE_SECRET',
     arg:'secret'
   },
