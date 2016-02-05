@@ -70,6 +70,13 @@ var conf = convict({
     default: '',
     env:'LDAP_BASE',
     arg:'ldap-base'
+  },
+  requiresLogin:{
+    doc:'App requires login by a user. Defaults to true',
+    format:Boolean,
+    default:true,
+    env:'REQUIRE_LOGIN',
+    arg:'require-login'
   }
 });
 

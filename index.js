@@ -36,7 +36,10 @@ app.post('/signin', passport.authenticate('ldapauth', {
 }));
 
 app.use(express.static(__dirname+'/public'));
-app.use(requiresLogin);
+if(config.requiresLogin){
+  app.use(requiresLogin);
+}
+
 if(config.directory){
   app.use(express.static(config.directory));
 }
