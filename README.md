@@ -44,10 +44,12 @@ _./_
 
 **COOKIE_SECRET, --secret** : Random string to use for encrypting session cookie,the longer the better.
 
-** LDAP_URL, --ldap-server** : The Url to the ldap server
+**LDAP_URL, --ldap-server** : The Url to the ldap server
 
 **LDAP_ADMIN, --ldap-admin** : The DN of a user qualified to do LDAP queries
 
 **LDAP_PASSWORD, --ldap-password** : The password for the LDAP admin
 
 **LDAP_BASE, --ldap-base**: The LDAP search base (e.g. ou=Users,dc=example,dc=org)
+
+**REQUIRE_LOGIN, --require-login** : True/False value that indicates whether NGINY should prompt users for login or be wide open. 
