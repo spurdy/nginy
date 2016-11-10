@@ -1,29 +1,38 @@
 <!DOCTYPE html>
-<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
-<html class="no-js" lang="en" >
-
+<html>
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login to IRSLabs</title>
-
-  <!-- If you are using the CSS version, only link these 2 files, you may add app.css to use for your overrides if you like -->
-  <link rel="stylesheet" href="/vendor/foundation/css/normalize.css">
-  <link rel="stylesheet" href="/vendor/foundation/css/foundation.css">
-
-  <script src="/vendor/foundation/js/vendor/modernizr.js"></script>
-
+    <link href='/vendor/foundation/css/foundation.css' rel='stylesheet' />
+    <link href='style.css' rel='stylesheet' />
+    <meta charset='utf-8'>
 </head>
 <body>
 <div class="content">
     <div class="container row">
-        <h1>Login to IRS Labs</h1>
-          <p>Looks like you've been invited to view one of our prototypes, but haven't logged in yet. If you don't have credentials, be sure to contact whoever gave you the URL to get them.</p>
+        <h1>IRS Labs</h1>
 
-          <form method='POST' action='/signin'>
+        <p>
+            You are viewing a technology demonstration in IRS Labs.
+            This prototype is <strong>not</strong> an official IRS website.
+            For official IRS information, please go to the IRS website, <a href="https://www.irs.gov">www.irs.gov</a>.
+        </p>
+
+        <p class="alert alert-warning">
+            This prototype is for official IRS use only.
+            <strong>Do not enter personally identifiable information (PII) into this prototype.</strong>
+            PII is any data that could potentially identify a specific individual.
+            This includes, but is not limited to, first name, last name, home address, email address, SSN, date of birth, and telephone number.
+        </p>
+
+        <p>
+            Please sign in to view the prototype.
+            If you don't have a username, request one from your IRS Labs point of contact.
+        </p>
+
+        <form method='POST' action='/login'>
+            <input type='hidden' name='target' value='{{ target }}' />
             <fieldset>
-                <legend>Login</legend>
-                <label>User Name
+                <legend>Sign In</legend>
+                <label>Username
                     <input type='text' name='username' placeholder='Your username' required>
                 </label>
                 <label>Password
@@ -35,17 +44,20 @@
                     </li>
                 </ul>
             </fieldset>
-          </form>
-      </div>
+        </form>
+
+        <div class="footer-text">
+            NginY Sign In Page
+        </div>
+
+    </div>
 </div>
 
-<div class="scripts">
-  <script src="/vendor/foundation/js/vendor/jquery.js"></script>
-  <script src="/vendor/foundation/js/foundation.min.js"></script>
-  <script>
-    $(document).foundation();
-  </script>
+<div id='scripts'>
+    <script src='/vendor/modernizr/modernizr.js'></script>
+    <script src='/vendor/jquery/dist/jquery.min.js'></script>
+    <script src='/vendor/foundation/js/foundation.min.js'></script>
+    <script> $(document).foundation(); </script>
 </div>
-
 </body>
 </html>
